@@ -5,13 +5,13 @@
   "author": "Mathias Hammer, Kim Brandt-Jørgensen, Halfdan Goldek",
   "private": true,
   "scripts": {
-    "dev": "nuxt --spa",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt --spa generate"
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.10.0",
     "nuxt-onsenui-module": "^1.0.1"
   },
   "devDependencies": {}
