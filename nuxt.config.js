@@ -23,14 +23,12 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/css/onsen-css-components.css',
-    '@/assets/css/onsenui.css'
+
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/onsenui.js', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,7 +39,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    
+    'nuxt-onsenui-module'
   ],
   /*
   ** Build configuration

@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "nuxt": "^2.0.0",
-    "onsenui": "^2.10.10",
-    "vue-onsenui": "^2.6.2"
+    "nuxt-onsenui-module": "^1.0.1"
   },
   "devDependencies": {}
 }
