@@ -5,10 +5,10 @@
   "author": "Mathias Hammer, Kim Brandt-Jørgensen, Halfdan Goldek",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --spa",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt --spa generate"
   },
   "dependencies": {
     "nuxt": "^2.0.0",
