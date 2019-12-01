@@ -5,7 +5,7 @@
         <!-- LEFT SIDE MENU -->
         <v-ons-splitter-side
           swipeable
-          width="66%"
+          width="75%"
           height="100vh"
           style="background-color:#fff"
           collapse
@@ -33,7 +33,7 @@
         <!-- RIGHT SIDE MENU -->
         <v-ons-splitter-side
           swipeable
-          width="66%"
+          width="75%"
           height="100vh"
           style="background-color:#fff"
           collapse
@@ -278,7 +278,7 @@ a.nuxt-link {
   font-size: 11px;
   color: #fff;
   background-color: #4267b2;
-  padding: 4px;
+  padding: 4px 6px;
   border-radius: 50px;
   width: 90%;
   text-align: center;
