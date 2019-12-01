@@ -2,9 +2,19 @@
   <div style="max-width:400px;">
     <client-only>
       <v-ons-splitter>
-        <v-ons-splitter-side swipeable width="66%" height="100vh" style="background-color:#fff" collapse side="left" :open.sync="openSide">
+        <v-ons-splitter-side
+          swipeable
+          width="66%"
+          height="100vh"
+          style="background-color:#fff"
+          collapse
+          side="left"
+          :open.sync="openSide"
+        >
           <v-ons-list>
-            <div style="padding:12px; margin-left:-5px"><img src="../assets/img/generator_logo_uden_dato.png" width="100%" height="auto"></div>
+            <div style="padding:12px; margin-left:-5px">
+              <img src="../assets/img/generator_logo_uden_dato.png" width="100%" height="auto" />
+            </div>
             <v-ons-list-item
               v-for="(page, index) in pages"
               tappable
@@ -12,26 +22,30 @@
               @click="openSide = false"
               :key="page.index"
             >
-              <div class="center">{{ page.title }}</div>
+              <nuxt-link class="nuxt-link" :to="page.url">
+                <div class="center">{{ page.title }}</div>
+              </nuxt-link>
             </v-ons-list-item>
           </v-ons-list>
         </v-ons-splitter-side>
         <v-ons-splitter-content>
           <v-ons-toolbar>
-          <div class="left" @click="openSide = !openSide">
-            <div class="menuToggle menuToggled" v-if="openSide">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="left" @click="openSide = !openSide">
+              <div class="menuToggle menuToggled" v-if="openSide">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="menuToggle" v-else>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
-            <div class="menuToggle" v-else>
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="center">
+              <img src="../assets/img/lyn_logo.png" width="auto" height="100%" style="padding:4px 0;"/>
             </div>
-          </div>
-          <div class="center">Title</div>
-        </v-ons-toolbar>
+          </v-ons-toolbar>
           <nuxt />
         </v-ons-splitter-content>
       </v-ons-splitter>
@@ -86,6 +100,12 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+/* LINKS */
+a.nuxt-link{
+  text-decoration: none;
+  color:inherit;
 }
 
 /* HAMBURGER MENU */
@@ -167,27 +187,27 @@ export default {
         },
         Music: {
           title: "Music",
-          url: "/"
+          url: "/music"
         },
         Tickets: {
           title: "Tickets",
-          url: "/"
+          url: "/tickets"
         },
         Map: {
           title: "Map",
-          url: "/"
+          url: "/map"
         },
         News: {
           title: "News",
-          url: "/"
+          url: "/news"
         },
         Atmosphere: {
           title: "Atmosphere",
-          url: "/"
+          url: "/atmosphere"
         },
         Info: {
           title: "Info",
-          url: "/"
+          url: "/info"
         }
       },
       openSide: false
