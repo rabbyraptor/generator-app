@@ -2,7 +2,7 @@
   <div style="max-width:400px;">
     <client-only>
       <v-ons-splitter>
-        <v-ons-splitter-side swipeable width="66%" collapse side="left" :open.sync="openSide">
+        <v-ons-splitter-side swipeable width="66%" height="100vh" style="background-color:#fff" collapse side="left" :open.sync="openSide">
           <v-ons-list>
             <div style="padding:12px; margin-left:-5px"><img src="../assets/img/generator_logo_uden_dato.png" width="100%" height="auto"></div>
             <v-ons-list-item
