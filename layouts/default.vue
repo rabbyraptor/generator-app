@@ -2,6 +2,7 @@
   <div style="max-width:400px;">
     <client-only>
       <v-ons-splitter>
+        <!-- LEFT SIDE MENU -->
         <v-ons-splitter-side
           swipeable
           width="66%"
@@ -28,6 +29,31 @@
             </v-ons-list-item>
           </v-ons-list>
         </v-ons-splitter-side>
+
+        <!-- RIGHT SIDE MENU -->
+        <v-ons-splitter-side
+          swipeable
+          width="66%"
+          height="100vh"
+          style="background-color:#fff"
+          collapse
+          side="right"
+          :open.sync="openRightSide"
+        >
+            <div class="right-side-menu-top-grid">
+              <p class="fb-btn">
+                <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Connect to Facebook
+              </p>
+              <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
+            </div>
+            <h4 style="margin:12px 0 12px 12px;">Messages</h4>
+            <v-ons-card v-for="(message, index) in messages" tappable :key="message.index" style="font-size:12px">
+              <b>{{ message.title }}</b>
+              <p>{{ message.content }}</p>
+            </v-ons-card>
+        </v-ons-splitter-side>
+
+        <!-- PAGE CONTENT -->
         <v-ons-splitter-content>
           <v-ons-toolbar>
             <div class="left" @click="openSide = !openSide">
@@ -43,7 +69,15 @@
               </div>
             </div>
             <div class="center">
-              <img src="../assets/img/lyn_logo.png" width="auto" height="100%" style="padding:4px 0;"/>
+              <img
+                src="../assets/img/lyn_logo.png"
+                width="auto"
+                height="100%"
+                style="padding:4px 0;"
+              />
+            </div>
+            <div class="right" @click="openRightSide = !openRightSide">
+              <v-ons-icon icon="user-circle" size="30px" style="margin-right:11px;"></v-ons-icon>
             </div>
           </v-ons-toolbar>
           <nuxt />
@@ -52,6 +86,63 @@
     </client-only>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentPage: "home",
+      openSide: false,
+      openRightSide: false,
+      pages: {
+        home: {
+          title: "Home",
+          url: "/"
+        },
+        music: {
+          title: "Music",
+          url: "/music"
+        },
+        tickets: {
+          title: "Tickets",
+          url: "/tickets"
+        },
+        map: {
+          title: "Map",
+          url: "/map"
+        },
+        news: {
+          title: "News",
+          url: "/news"
+        },
+        atmosphere: {
+          title: "Atmosphere",
+          url: "/atmosphere"
+        },
+        info: {
+          title: "Info",
+          url: "/info"
+        }
+      },
+      messages: {
+        home: {
+          title: "Program update",
+          content: "Updates from the festival! These kind of updates are nice to have! A direct message from Generator Festival!"
+        },
+        music: {
+          title: "Events",
+          content: "Concert is about to begin! Get updates about your favorite artists!"
+        },
+        tickets: {
+          title: "Tickets are going fast",
+          content: "This is a sample message. A direct message from Generator Festival!"
+        }
+      }
+    };
+  }
+};
+</script>
+
 
 <style>
 html {
@@ -103,9 +194,9 @@ html {
 }
 
 /* LINKS */
-a.nuxt-link{
+a.nuxt-link {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 /* HAMBURGER MENU */
@@ -173,45 +264,27 @@ a.nuxt-link{
 .menuToggled span:nth-last-child(3) {
   transform: rotate(45deg) translate(-1px, -3px);
 }
-</style>
 
-<script>
-export default {
-  data() {
-    return {
-      currentPage: "home",
-      pages: {
-        Home: {
-          title: "Home",
-          url: "/"
-        },
-        Music: {
-          title: "Music",
-          url: "/music"
-        },
-        Tickets: {
-          title: "Tickets",
-          url: "/tickets"
-        },
-        Map: {
-          title: "Map",
-          url: "/map"
-        },
-        News: {
-          title: "News",
-          url: "/news"
-        },
-        Atmosphere: {
-          title: "Atmosphere",
-          url: "/atmosphere"
-        },
-        Info: {
-          title: "Info",
-          url: "/info"
-        }
-      },
-      openSide: false
-    };
-  }
-};
-</script>
+/* RIGHT SIDE MENU */
+.right-side-menu-top-grid {
+  display: grid;
+  grid-template-columns: minmax(10%, 1fr) 20%;
+  grid-template-rows: 20px;
+  padding: 12px;
+  align-items: center;
+}
+
+.right-side-menu-top-grid .fb-btn {
+  font-size: 11px;
+  color: #fff;
+  background-color: #4267b2;
+  padding: 4px;
+  border-radius: 50px;
+  width: 90%;
+  text-align: center;
+}
+
+.right-side-menu-top-grid .settings-btn {
+  justify-self: flex-end;
+}
+</style>
