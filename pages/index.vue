@@ -1,24 +1,12 @@
 <template>
   <div class="container">
-    <v-ons-page>
-      <v-ons-toolbar>
-        <div class="center">Title</div>
-      </v-ons-toolbar>
-
-      <p style="text-align: center">
-        <v-ons-button @click="$ons.notification.alert('Hello World!')">Click me!</v-ons-button>
-      </p>
-    </v-ons-page>
+    <p>Home page</p>
   </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
 
 export default {
-  components: {
-    Logo
-  }
 };
 </script>
 
