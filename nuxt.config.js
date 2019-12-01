@@ -23,6 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
+    'onsenui/css/onsenui.css',
+    'onsenui/css/onsen-css-components.css'
   ],
   /*
   ** Plugins to load before mounting the App
