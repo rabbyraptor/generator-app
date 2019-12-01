@@ -71,8 +71,8 @@
             <div class="center">
               <img
                 src="../assets/img/lyn_logo.png"
-                width="100%"
-                height="auto"
+                width="auto"
+                height="100%"
                 style="padding:4px 0;"
               />
             </div>
