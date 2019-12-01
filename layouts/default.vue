@@ -72,7 +72,7 @@
               <img
                 src="../assets/img/lyn_logo.png"
                 width="auto"
-                height="100%"
+                height="44px"
                 style="padding:4px 0;"
               />
             </div>
