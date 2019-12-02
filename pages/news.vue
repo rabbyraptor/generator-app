@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="text-align:center;">News</h1>
+    <h1 class="title">News</h1>
     <v-ons-list>
       <v-ons-list-item v-for="news in news" :key="news.title">
         <div class="news-grid">
