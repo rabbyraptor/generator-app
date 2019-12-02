@@ -12,21 +12,27 @@
           side="left"
           :open.sync="openSide"
         >
-          <v-ons-list>
+          <v-ons-list style="display:flex; flex-flow:column;">
             <div style="padding:12px; margin-left:-5px">
-              <img src="../assets/img/generator_logo_uden_dato.png" width="100%" height="auto" />
+              <nuxt-link to="/">
+                <img
+                  src="../assets/img/generator_logo_uden_dato.png"
+                  width="100%"
+                  height="auto"
+                  @click="openSide = false"
+                />
+              </nuxt-link>
             </div>
-            <v-ons-list-item
+            <nuxt-link
+              class="nuxt-link"
+              :to="page.url"
               v-for="(page, index) in pages"
-              tappable
-              modifier="chevron"
-              @click="openSide = false"
               :key="page.index"
             >
-              <nuxt-link class="nuxt-link" :to="page.url">
-                <div class="center">{{ page.title }}</div>
-              </nuxt-link>
-            </v-ons-list-item>
+              <v-ons-list-item tappable modifier="chevron" @click="openSide = false">
+                <div class="center" style="margin-left:12px;">{{ page.title }}</div>
+              </v-ons-list-item>
+            </nuxt-link>
           </v-ons-list>
         </v-ons-splitter-side>
 
@@ -85,9 +91,9 @@
               <v-ons-icon icon="user-circle" size="30px" style="margin-right:11px;"></v-ons-icon>
             </div>
           </v-ons-toolbar>
-          <div class="main-wrapper">
+          <v-ons-page class="main-wrapper">
             <nuxt />
-          </div>
+          </v-ons-page>
         </v-ons-splitter-content>
       </v-ons-splitter>
     </client-only>
@@ -159,6 +165,8 @@ export default {
 a.nuxt-link {
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  height: 100%;
 }
 
 /* HAMBURGER MENU */

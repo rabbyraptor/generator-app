@@ -19,9 +19,14 @@ html {
   
   /* MAIN WRAPPER */
   .main-wrapper {
-    margin: 44px auto 0 auto;
+    margin:auto;
     min-height: 100vh;
     display: flex;
+    margin-top:44px;
+  }
+
+  .container{
+
   }
   
   .button--green {
