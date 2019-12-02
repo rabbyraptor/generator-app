@@ -57,7 +57,6 @@
             v-for="(message, index) in messages"
             tappable
             :key="message.index"
-            style="font-size:12px"
           >
             <b>{{ message.title }}</b>
             <p>{{ message.content }}</p>
@@ -167,6 +166,7 @@ a.nuxt-link {
   color: inherit;
   width: 100%;
   height: 100%;
+  font-size:20px;
 }
 
 /* HAMBURGER MENU */
