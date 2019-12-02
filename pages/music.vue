@@ -1,18 +1,18 @@
 <template>
   <div>
     <h1 class="title">Music</h1>
-    <program></program>
-    <lineup></lineup>
-    <playlists></playlists>
+    <program v-if="activeTab == 'program'"></program>
+    <lineup v-if="activeTab == 'lineup'"></lineup>
+    <playlists v-if="activeTab == 'playlists'"></playlists>
 
     <v-ons-tabbar>
       <v-ons-tab
-        v-for="(tab, i) in tabs"
-        :icon="tabs[i].icon"
-        :label="tabs[i].label"
-        :badge="tabs[i].badge"
-        :key="tab.i"
-        @click="activeTab = tab.i"
+        v-for="(tab, index) in tabs"
+        :label="tab.label"
+        :badge="tab.badge"
+        :key="tab.key"
+        @click="activeTab = tab.key"
+        :active="isActiveTab(tab.key)"
       ></v-ons-tab>
     </v-ons-tabbar>
   </div>
@@ -24,22 +24,30 @@ import lineup from "../components/lineup";
 import playlists from "../components/playlists";
 
 export default {
+  methods: {
+    isActiveTab(key) {
+      if (this.activeTab == key) {
+        return true;
+      }
+      return false;
+    }
+  },
   data() {
     return {
-      activeTab: 0,
+      activeTab: "program",
       tabs: [
         {
           label: "Program",
-          key: "homePage"
+          key: "program"
         },
         {
           label: "Line-up",
           page: "lineup",
-          key: "newsPage"
+          key: "lineup"
         },
         {
           label: "Playlists",
-          key: "settingsPage"
+          key: "playlists"
         }
       ]
     };
