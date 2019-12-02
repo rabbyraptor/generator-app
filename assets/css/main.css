@@ -32,6 +32,7 @@ h4,
 h5,
 .tabbar__label {
   font-family: "Knockout-49" !important;
+  text-transform: uppercase;
 }
 
 .tabbar__label {
