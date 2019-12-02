@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p>{{ this.$route.path }}</p>
-    
+    <p>hej</p>
   </div>
 </template>
 
