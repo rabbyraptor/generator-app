@@ -29,7 +29,7 @@ export default {
 
 <style>
 .container {
-  background-image: url(../assets/img/background3.png);
+  background-image: url(../assets/img/background3.jpg);
   background-size: cover;
   background-position: center;
   padding: 70px 0;
