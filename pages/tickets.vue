@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <p>{{ this.$route.path }}</p>
   </div>
 </template>
