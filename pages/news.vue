@@ -6,7 +6,7 @@
         <div class="news-grid">
           <div class="news-image" :style="{backgroundColor:news.backgroundColor}"></div>
           <div class="news-content">
-            <b v-html="news.title" />
+            <p style="font-weight:bold;" v-html="news.title" />
             <p v-html="news.content" />
           </div>
           <div class="fav-heart" @click="news.favorite = !news.favorite">
@@ -85,7 +85,6 @@ export default {
 }
 
 .news-content {
-  font-size: 14px;
   padding: 12px;
 }
 
