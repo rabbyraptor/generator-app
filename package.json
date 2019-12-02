@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@bazzite/nuxt-optimized-images": "^0.2.2",
+    "imagemin-optipng": "^7.1.0",
     "nuxt": "^2.10.0",
     "nuxt-onsenui-module": "^1.0.1",
     "vue-ionicons": "^3.0.4"
