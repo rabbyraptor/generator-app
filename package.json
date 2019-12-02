@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "nuxt": "^2.10.0",
-    "nuxt-onsenui-module": "^1.0.1"
+    "nuxt-onsenui-module": "^1.0.1",
+    "vue-ionicons": "^3.0.4"
   },
   "devDependencies": {}
 }
