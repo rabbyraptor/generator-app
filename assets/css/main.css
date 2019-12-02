@@ -1,5 +1,4 @@
 html {
-    font-family: "Knockout-49";
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -14,14 +13,26 @@ html {
     src: 
         local('Knockout-49'),
         url(/fonts/Knockout-49.otf);
-    font-display: swap;
-}
+    /*font-display: swap;*/
+  }
   
   *,
   *:before,
   *:after {
     box-sizing: border-box;
     margin: 0;
+  }
+
+  *{
+    font-family: "Knockout-49";
+  }
+
+  h1, h2, h3, h4, h5, .tabbar__label{
+    font-family: "Knockout-49"!important;
+  }
+
+  .tabbar__label{
+    /*font-size:16px!important;*/
   }
   
   /* MAIN WRAPPER */
