@@ -80,6 +80,6 @@ dist
 # IDE
 .idea
 
-package-lock.json
+# package-lock.json
 .contentful.json
 .nvmrc
