@@ -40,13 +40,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@bazzite/nuxt-optimized-images',
-    'nuxt-onsenui-module'
+    'nuxt-onsenui-module',
+    'nuxt-imagemin'
   ],
 
-  optimizedImages: {
-    optimizeImages: true
-  },
   /*
   ** Build configuration
   */

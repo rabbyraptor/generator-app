@@ -11,12 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@bazzite/nuxt-optimized-images": "^0.2.2",
-    "imagemin": "^7.0.1",
     "nuxt": "^2.10.0",
+    "nuxt-imagemin": "^1.0.0",
     "nuxt-onsenui-module": "^1.0.1",
-    "vue-ionicons": "^3.0.4",
-    "webp-loader": "^0.6.0"
+    "vue-ionicons": "^3.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nuxt-imagemin": "^1.0.0"
+  }
 }
