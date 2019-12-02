@@ -20,7 +20,6 @@ html {
   /* MAIN WRAPPER */
   .main-wrapper {
     margin:auto;
-    min-height: 100vh;
     display: flex;
     margin-top:44px;
   }
