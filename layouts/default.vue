@@ -1,5 +1,5 @@
 <template>
-  <div style="max-width:400px;">
+  <div>
     <client-only>
       <v-ons-splitter>
         <!-- LEFT SIDE MENU -->
@@ -40,17 +40,22 @@
           side="right"
           :open.sync="openRightSide"
         >
-            <div class="right-side-menu-top-grid">
-              <p class="fb-btn">
-                <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Connect to Facebook
-              </p>
-              <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
-            </div>
-            <h4 style="margin:12px 0 12px 12px;">Messages</h4>
-            <v-ons-card v-for="(message, index) in messages" tappable :key="message.index" style="font-size:12px">
-              <b>{{ message.title }}</b>
-              <p>{{ message.content }}</p>
-            </v-ons-card>
+          <div class="right-side-menu-top-grid">
+            <p class="fb-btn">
+              <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Connect to Facebook
+            </p>
+            <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
+          </div>
+          <h4 style="margin:12px 0 12px 12px;">Messages</h4>
+          <v-ons-card
+            v-for="(message, index) in messages"
+            tappable
+            :key="message.index"
+            style="font-size:12px"
+          >
+            <b>{{ message.title }}</b>
+            <p>{{ message.content }}</p>
+          </v-ons-card>
         </v-ons-splitter-side>
 
         <!-- PAGE CONTENT -->
@@ -80,7 +85,9 @@
               <v-ons-icon icon="user-circle" size="30px" style="margin-right:11px;"></v-ons-icon>
             </div>
           </v-ons-toolbar>
-          <nuxt />
+          <div class="main-wrapper">
+            <nuxt />
+          </div>
         </v-ons-splitter-content>
       </v-ons-splitter>
     </client-only>
@@ -127,15 +134,18 @@ export default {
       messages: {
         home: {
           title: "Program update",
-          content: "Updates from the festival! These kind of updates are nice to have! A direct message from Generator Festival!"
+          content:
+            "Updates from the festival! These kind of updates are nice to have! A direct message from Generator Festival!"
         },
         music: {
           title: "Events",
-          content: "Concert is about to begin! Get updates about your favorite artists!"
+          content:
+            "Concert is about to begin! Get updates about your favorite artists!"
         },
         tickets: {
           title: "Tickets are going fast",
-          content: "This is a sample message. A direct message from Generator Festival!"
+          content:
+            "This is a sample message. A direct message from Generator Festival!"
         }
       }
     };
@@ -145,54 +155,6 @@ export default {
 
 
 <style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-
 /* LINKS */
 a.nuxt-link {
   text-decoration: none;
