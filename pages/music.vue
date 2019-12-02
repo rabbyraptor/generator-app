@@ -1,15 +1,15 @@
 <template>
-  <div>
+<div style="margin-bottom:49px; overflow:hidden; min-height:100vh;">
     <h1 class="title">Music</h1>
-    <program v-if="activeTab == 'program'"></program>
-    <lineup v-if="activeTab == 'lineup'"></lineup>
-    <playlists v-if="activeTab == 'playlists'"></playlists>
-
-    <v-ons-tabbar>
+      <program v-if="activeTab == 'program'"></program>
+      <lineup v-if="activeTab == 'lineup'"></lineup>
+      <playlists v-if="activeTab == 'playlists'"></playlists>
+    <v-ons-tabbar position="bottom">
       <v-ons-tab
         v-for="(tab, index) in tabs"
         :label="tab.label"
         :badge="tab.badge"
+        :icon="tab.icon"
         :key="tab.key"
         @click="activeTab = tab.key"
         :active="isActiveTab(tab.key)"
@@ -42,7 +42,6 @@ export default {
         },
         {
           label: "Line-up",
-          page: "lineup",
           key: "lineup"
         },
         {
@@ -61,4 +60,12 @@ export default {
 </script>
 
 <style>
+.tabbar{
+  z-index: 4;
+  position: fixed;
+}
+
+.ons-tabbar{
+  z-index: 4!important;
+}
 </style>
