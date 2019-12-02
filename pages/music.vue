@@ -1,44 +1,56 @@
 <template>
-  <div class="container">
-    <p>{{ this.$route.path }}</p>
+  <div>
+    <h1 class="title">Music</h1>
+    <program></program>
+    <lineup></lineup>
+    <playlists></playlists>
+
+    <v-ons-tabbar>
+      <v-ons-tab
+        v-for="(tab, i) in tabs"
+        :icon="tabs[i].icon"
+        :label="tabs[i].label"
+        :badge="tabs[i].badge"
+        :key="tab.i"
+        @click="activeTab = tab.i"
+      ></v-ons-tab>
+    </v-ons-tabbar>
   </div>
 </template>
 
 <script>
+import program from "../components/program";
+import lineup from "../components/lineup";
+import playlists from "../components/playlists";
 
 export default {
+  data() {
+    return {
+      activeTab: 0,
+      tabs: [
+        {
+          label: "Program",
+          key: "homePage"
+        },
+        {
+          label: "Line-up",
+          page: "lineup",
+          key: "newsPage"
+        },
+        {
+          label: "Playlists",
+          key: "settingsPage"
+        }
+      ]
+    };
+  },
+  components: {
+    program,
+    lineup,
+    playlists
+  }
 };
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
