@@ -2,13 +2,13 @@
   <div class="container">
    <div class="indexbox">
      <img class="indexlogo" src="../assets/img/generator_logo_uden_dato.png">
-     <h2>Festival</h2>
-     <h2>2020</h2>
-   </div>  
+     <h2 id="h2index">Festival</h2>
+     <h2 id="h2index">2020</h2>
+     </div>  
   
   <div class="buyticket">
    <a id="a" href="#">
-   <h3>Buy Ticket</h3>
+   <h3 id="h3index">Buy Ticket</h3>
    </a>
   </div>
 
@@ -31,6 +31,10 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  width: 100%;
+  background-image: url(../assets/img/background3.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .title {
@@ -56,25 +60,27 @@ export default {
 }
 
 .indexbox {
-  width: 300px; 
+  width: 250px; 
   height: 200px;
-  padding: 30px; 
+  padding: 20px; 
   margin: 70px auto;
-  background-color: whitesmoke;
+  background-color: white;
   text-align: center;
+  opacity: 0.80;
 }
 
 .indexlogo {
-  width: 75%;
+  width: 100%;
 }
 
 .buyticket {
-  width: 200px; 
-  height: 50px;
+  width: 250px; 
+  height: 70px;
   padding: 10px; 
   margin: 30px auto;
-  background-color: whitesmoke;
-  text-align: center; 
+  background-color: white;
+  text-align: center;
+  opacity: 0.80; 
 }
 
 .spons {
@@ -91,6 +97,15 @@ export default {
 
 .logo {
   width: 90%; 
+  opacity: 0.80;
+}
+
+#h2index {
+  font-size: 50px; 
+}
+
+#h3index {
+  font-size: 35px; 
 }
 
 </style>
