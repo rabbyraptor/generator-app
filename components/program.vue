@@ -99,8 +99,8 @@ export default {
   width:100%;
   width: auto;
   top: 44px;
-  margin: 0px 0 0 0;
-  max-height: calc(100% - 100px);
+  margin: 0;
+  max-height: calc(100% - 88px);
   overflow-y: auto;
   overflow-x:hidden;
   padding: 0;
@@ -160,7 +160,7 @@ export default {
   top: 0px;
   width: 100%;
   background-color: #fff;
-  padding: 10px 12px 8px 12px;
+  padding: 8px 12px 6px 12px;
   font-size: 20px;
   z-index: 5;
   border-bottom: 1px solid #b2b2b2;
