@@ -99,14 +99,12 @@ export default {
   width:100%;
   width: auto;
   top: 44px;
-  margin: 12px 0 0 0;
+  margin: 0px 0 0 0;
   max-height: calc(100% - 100px);
   overflow-y: auto;
   overflow-x:hidden;
   padding: 0;
-  border-top: 1px solid #b2b2b2;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius:0;
 }
 
 .artist-info {
@@ -162,7 +160,7 @@ export default {
   top: 0px;
   width: 100%;
   background-color: #fff;
-  padding: 12px 12px 10px 12px;
+  padding: 10px 12px 8px 12px;
   font-size: 20px;
   z-index: 5;
   border-bottom: 1px solid #b2b2b2;
