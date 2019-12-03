@@ -53,11 +53,7 @@
             <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
           </div>
           <h4 style="margin:12px 0 12px 12px;">Messages</h4>
-          <v-ons-card
-            v-for="(message, index) in messages"
-            tappable
-            :key="message.index"
-          >
+          <v-ons-card v-for="(message, index) in messages" tappable :key="message.index">
             <b>{{ message.title }}</b>
             <p>{{ message.content }}</p>
           </v-ons-card>
@@ -103,7 +99,6 @@
 export default {
   data() {
     return {
-      currentPage: "home",
       openSide: false,
       openRightSide: false,
       pages: {
@@ -154,13 +149,12 @@ export default {
         }
       }
     };
-  }
+  },
 };
 </script>
 
 
 <style>
-
 /* HAMBURGER MENU */
 .menuToggle {
   margin: 11px 0 0 11px;
