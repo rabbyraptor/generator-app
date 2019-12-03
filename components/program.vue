@@ -3,14 +3,14 @@
     <h2 class="title">Program</h2>
     <v-ons-list>
       <v-ons-list-item expandable :expanded.sync="isExpanded">
-        <div class="center" style="padding:12px; z-index:3;">
+        <div class="center" style="padding:12px;">
           <h3 style="font-size:24px;">Thursday Sep. 3rd</h3>
         </div>
         <div class="expandable-content">
           <v-ons-list-item v-for="artist in artists" :key="artist.title">
             <div class="artist-grid">
-              <div class="artist-image" :style="{backgroundColor:artist.backgroundColor}"></div>
-              <div class="artist-content">
+              <div class="artist-image" :style="backgroundImage(artist.imageUrl)" @click="showModal(artist)"></div>
+              <div class="artist-content" @click="showModal(artist)">
                 <p style="font-weight:bold;" v-html="artist.title" />
                 <p v-html="artist.time" />
                 <p v-html="artist.venue" />
@@ -24,16 +24,48 @@
         </div>
       </v-ons-list-item>
       <v-ons-list-item>
-        <div class="center" style="padding:12px; line-height:1; z-index:3;">
+        <div class="center" style="padding:12px; line-height:1;">
           <h3 style="font-size:24px;">Friday Sep. 4th</h3>
         </div>
       </v-ons-list-item>
       <v-ons-list-item>
-        <div class="center" style="padding:12px; line-height:1; z-index:3;">
+        <div class="center" style="padding:12px; line-height:1;">
           <h3 style="font-size:24px;">Saturday Sep. 5th</h3>
         </div>
       </v-ons-list-item>
     </v-ons-list>
+
+    <transition name="fade">
+      <v-ons-card class="modal" v-if="modalVisible">
+        <div class="close-btn" @click="modalVisible = false">
+          <ios-arrow-down-icon></ios-arrow-down-icon>
+        </div>
+        <div class="artist-info">
+          <div class="artist-info-image" :style="backgroundImage(activeArtist.imageUrl)"></div>
+          <div class="artist-info-wrapper">
+            <h3 class="artist-info-title">{{ activeArtist.title }}</h3>
+            <div class="artist-info-top">
+              <p>
+                {{ activeArtist.time }}
+                <br />
+                {{ activeArtist.venue }}
+              </p>
+              <div class="fav-heart" @click="activeArtist.favorite = !activeArtist.favorite">
+                <ios-heart-icon v-if="activeArtist.favorite" />
+                <ios-heart-empty-icon v-else />
+              </div>
+            </div>
+            <div class="artist-info-text">
+              <p>{{ activeArtist.info }}</p>
+            </div>
+            <div class="artist-info-some">
+                <ios-logo-facebook-icon />
+            </div>
+            <img class="logo" width="100%" style="margin-top:32px; opacity:0.3;" src="../assets/img/city_of_odense_albani.png">
+          </div>
+        </div>
+      </v-ons-card>
+    </transition>
   </div>
 </template>
 
@@ -42,68 +74,122 @@ export default {
   data() {
     return {
       isExpanded: true,
-      artists: {
-        artist1: {
-          title: "Artist Name 1",
-          time: "16:00",
-          venue: "Venue 1",
-          favorite: false,
-          backgroundColor: "blue"
-        },
-        artist2: {
-          title: "Artist Name 2",
-          time: "18:30",
-          venue: "Venue 2",
-          favorite: true,
-          backgroundColor: "red"
-        },
-        artist3: {
-          title: "Artist Name 3",
-          time: "19:00",
-          venue: "Venue 3",
-          favorite: false,
-          backgroundColor: "black"
-        },
-        artist4: {
-          title: "Artist Name 4",
-          time: "19:30",
-          venue: "Venue 4",
-          favorite: false,
-          backgroundColor: "blue"
-        },
-        artist5: {
-          title: "Artist Name 5",
-          time: "21:00",
-          venue: "Venue 5",
-          favorite: false,
-          backgroundColor: "red"
-        },
-        artist6: {
-          title: "Artist Name 6",
-          time: "22:00",
-          venue: "Venue 6",
-          favorite: false,
-          backgroundColor: "black"
-        }
-      }
+      modalVisible: false,
+      activeArtist: null
     };
-  }
+  },
+  methods: {
+    backgroundImage(image) {
+      return "background-image: url(/img/artists/" + image + ".png)";
+    },
+    showModal(artist) {
+      this.modalVisible = true;
+      this.activeArtist = artist;
+    }
+  },
+  props: ["artists"]
 };
 </script>
 
 <style>
+.modal {
+  background-color: #ffffff;
+  position: fixed;
+  height: 100%;
+  width:100%;
+  width: auto;
+  top: 44px;
+  margin: 12px 0 0 0;
+  max-height: calc(100% - 100px);
+  overflow-y: auto;
+  overflow-x:hidden;
+  padding: 0;
+  border-top: 1px solid #b2b2b2;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.artist-info {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-flow: column;
+  width: 100%;
+  position: relative;
+}
+
+.artist-info-image {
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100%;
+  max-height: 200px !important;
+}
+
+.artist-info-wrapper {
+  padding: 16px;
+  width: 100%;
+}
+
+.artist-info-top {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  margin-bottom:16px;
+  font-size:22px;
+}
+
+.artist-info-title{
+  font-size:32px!important;
+  margin:.2em 0!important;
+}
+
+.artist-info-text {
+  word-break: break-word;
+  white-space:normal;
+
+}
+
+.close-btn {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 0px;
+  width: 100%;
+  background-color: #fff;
+  padding: 12px 12px 10px 12px;
+  font-size: 20px;
+  z-index: 5;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+/* MODAL ANIMATION */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s ease-out;
+}
+.fade-enter, .fade-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0.8;
+  transform: translateY(100%);
+}
+
 .list-item,
 .list-item__center {
   padding: 0;
 }
 
-.list-item__expandable-content{
-  padding:0;
+.list-item__expandable-content {
+  padding: 0;
 }
 
 .artist-grid {
   display: grid;
-  width:100%;
+  width: 100%;
   grid-template-columns: 100px minmax(100px, 1fr) 30px;
   align-items: center;
 }
@@ -111,14 +197,20 @@ export default {
 .artist-image {
   height: 100px;
   width: 100px;
+  background-size: cover;
 }
 
 .artist-content {
   padding: 0 12px;
-  font-size:20px;
+  font-size: 20px;
 }
 
 .fav-heart {
   font-size: 20px;
+}
+
+.ion {
+  display: flex;
+  align-items: center;
 }
 </style>
