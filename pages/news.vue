@@ -97,7 +97,7 @@ export default {
         navigator
           .share({
             title: news.title,
-            text: news.content,
+            text: news.content.slice(0, 100) + " ... Read more: ",
             url: window.location.href
           })
           .then(function() {
