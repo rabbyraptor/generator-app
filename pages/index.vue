@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="index-container">
     <div class="indexbox">
       <img class="indexlogo" src="/img/generator_logo_uden_dato.png" />
       <h2 id="h2index">
@@ -25,12 +25,11 @@ export default {};
 </script>
 
 <style>
-.page-container {
+.index-container {
   background-image: url(/img/bg/bg1.jpg);
   background-size: cover;
   background-position: center;
   padding: 70px 0;
-  margin-bottom:0;
 }
 
 .indexbox {
