@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     backgroundImage(image) {
-      return "background-image: url(/img/artists/" + image + ".png)";
+      return "background-image: url(/img/artists/" + image + ".jpg)";
     }
   },
   props: ["artists"]
