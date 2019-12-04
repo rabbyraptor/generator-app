@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p>{{ this.$route.path }}</p>
+  <div class="page-container">
+    <h1 class="title">Maps</h1>
   </div>
 </template>
 
