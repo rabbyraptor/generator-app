@@ -1,9 +1,10 @@
 <template>
-  <div style="margin-bottom:44px; overflow:hidden; min-height:100vh;">
+  <div class="page-container">
     <h1 class="title">Music</h1>
     <program :artists="this.artists" v-if="activeTab == 'program'"></program>
-    <lineup v-if="activeTab == 'lineup'"></lineup>
-    <playlists v-if="activeTab == 'playlists'"></playlists>
+    <lineup :artists="this.artists" v-if="activeTab == 'lineup'"></lineup>
+    <playlists :artists="this.artists" v-if="activeTab == 'playlists'"></playlists>
+    <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
     <v-ons-bottom-toolbar class="music-toolbar">
       <ul>
         <li
@@ -36,7 +37,7 @@ export default {
   },
   data() {
     return {
-      activeTab: "program",
+      activeTab: "lineup",
       tabs: [
         {
           label: "Line-up",
