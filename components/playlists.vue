@@ -18,7 +18,6 @@
         </a>
       </div>
     </div>
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
   </div>
 </template>
 
