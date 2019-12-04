@@ -37,7 +37,7 @@
         </div>
       </v-ons-list-item>
     </v-ons-list>
-    <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
+    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
   </div>
 </template>
 

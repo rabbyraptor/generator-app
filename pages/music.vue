@@ -4,7 +4,7 @@
     <program :artists="this.artists" v-if="activeTab == 'program'"></program>
     <lineup :artists="this.artists" v-if="activeTab == 'lineup'"></lineup>
     <playlists :artists="this.artists" v-if="activeTab == 'playlists'"></playlists>
-    <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
+    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
     <v-ons-bottom-toolbar class="music-toolbar">
       <ul>
         <li

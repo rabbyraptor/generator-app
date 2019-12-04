@@ -48,13 +48,13 @@
               <p>Links and sources:</p>
             </div>
             <div class="news-info-some"></div>
-            <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
+            <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
           </div>
         </div>
       </v-ons-card>
     </transition>
 
-    <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
+    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
     <v-ons-bottom-toolbar class="news-toolbar">
       <ul>
         <li
@@ -88,12 +88,8 @@ export default {
       return "background-image: url(/img/artists/" + image + ".png)";
     },
     shareButton(news) {
-      // Check if navigator.share is supported by the browser
       if (navigator.share) {
         console.log("Congrats! Your browser supports Web Share API");
-
-        // navigator.share accepts objects which must have atleast title, text or
-        // url. Any text or title or text is possible
         navigator
           .share({
             title: news.title,

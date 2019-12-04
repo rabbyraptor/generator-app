@@ -16,7 +16,7 @@
             <div style="padding:12px; margin-left:-5px">
               <nuxt-link to="/">
                 <img
-                  src="../assets/img/generator_logo_uden_dato.png"
+                  src="/img/generator_logo_uden_dato.png"
                   width="100%"
                   height="auto"
                   @click="openSide = false"
@@ -76,7 +76,7 @@
             </div>
             <div class="center">
               <img
-                src="../assets/img/lyn_logo.png"
+                src="/img/lyn_logo.png"
                 width="auto"
                 height="44px"
                 style="padding:4px 0;"

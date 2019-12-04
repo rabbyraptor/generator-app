@@ -76,7 +76,7 @@
                 <v-ons-icon icon="youtube" />
               </div>
             </div>
-            <img class="odense-albani-logo" src="../assets/img/city_of_odense_albani.png" />
+            <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
           </div>
         </div>
       </v-ons-card>

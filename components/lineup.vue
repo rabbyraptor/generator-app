@@ -57,7 +57,7 @@
               class="logo"
               width="100%"
               style="margin-top:32px; opacity:0.3;"
-              src="../assets/img/city_of_odense_albani.png"
+              src="/img/city_of_odense_albani.png"
             />
           </div>
         </div>
