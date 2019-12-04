@@ -2,8 +2,8 @@
   <div class="container">
    <div class="indexbox">
      <img class="indexlogo" src="../assets/img/generator_logo_uden_dato.png">
-     <h2 id="h2index">Festival</h2>
-     <h2 id="h2index">2020</h2>
+     <h2 id="h2index">Festival<br>2020</h2>
+     
      </div>  
   
   <div class="buyticket">
@@ -46,7 +46,7 @@ export default {
 }
 
 .indexlogo {
-  width: 100%;
+  width: 100%; 
 }
 
 .buyticket {
@@ -77,11 +77,23 @@ export default {
 }
 
 #h2index {
+<<<<<<< Updated upstream
   font-size: 50px; 
 }
 
 #h3index {
   font-size: 35px; 
 }
+=======
+  font-size: 40px;
+  margin: 0;  
+}
+
+#h3index {
+  color: white; 
+  font-size: 40px;
+  margin: 0; 
+} 
+>>>>>>> Stashed changes
 
 </style>
