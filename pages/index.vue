@@ -29,7 +29,7 @@ export default {
 
 <style>
 .container {
-  background-image: url(../assets/img/background3.jpg);
+  background-image: url(../assets/img/background3.png);
   background-size: cover;
   background-position: center;
   padding: 70px 0;
@@ -37,12 +37,11 @@ export default {
 
 .indexbox {
   width: 250px; 
-  height: 200px;
-  padding: 20px; 
+  height: 180px;
+  padding: 10px; 
   margin: auto;
   background-color: white;
   text-align: center;
-  opacity: 0.80;
 }
 
 .indexlogo {
@@ -54,15 +53,19 @@ export default {
   height: 70px;
   padding: 10px; 
   margin: 30px auto;
-  background-color: white;
+  background-color: red;
   text-align: center;
-  opacity: 0.80; 
+}
+
+.buyticket:active {
+  background-color: #1a17ac;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .spons {
   width: 200px; 
   height: 50px;
-   
   margin: 90px auto;
   text-align: center;
 }
@@ -84,5 +87,4 @@ export default {
   font-size: 40px;
   margin: 0; 
 } 
-
 </style>
