@@ -9,7 +9,7 @@
         <div class="expandable-content tickets">
           <v-ons-list-item v-for="ticket in studentTickets.tickets" :key="ticket.type">
             <div class="ticket-grid">
-              <div class="ticket-image" style="background-color:red"></div>
+              <div class="ticket-image" :style="backgroundImage(studentTickets.imageUrl)"></div>
               <div class="ticket-content">
                 <p style="font-weight:bold;" v-html="ticket.type" />
                 <p v-html="ticket.price" />
@@ -26,7 +26,7 @@
         <div class="expandable-content">
           <v-ons-list-item v-for="ticket in nonStudentTickets.tickets" :key="ticket.type">
             <div class="ticket-grid">
-              <div class="ticket-image" style="background-color:red"></div>
+              <div class="ticket-image" :style="backgroundImage(nonStudentTickets.imageUrl)"></div>
               <div class="ticket-content">
                 <p style="font-weight:bold;" v-html="ticket.type" />
                 <p v-html="ticket.price" />
@@ -69,6 +69,7 @@ export default {
         }
       ],
         isExpanded: false,
+        imageUrl: "ticket-spring"
       },
       nonStudentTickets: {
         tickets: [
@@ -94,8 +95,14 @@ export default {
         }
       ],
         isExpanded: false,
+        imageUrl: "ticket-spring"
       }
     };
+  },
+  methods:{
+    backgroundImage(image) {
+      return "background-image: url(/img/tickets/" + image + ".jpg)";
+    },
   }
 };
 </script>
