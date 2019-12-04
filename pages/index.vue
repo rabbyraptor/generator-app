@@ -77,23 +77,12 @@ export default {
 }
 
 #h2index {
-<<<<<<< Updated upstream
   font-size: 50px; 
 }
 
 #h3index {
-  font-size: 35px; 
-}
-=======
-  font-size: 40px;
-  margin: 0;  
-}
-
-#h3index {
-  color: white; 
   font-size: 40px;
   margin: 0; 
 } 
->>>>>>> Stashed changes
 
 </style>
