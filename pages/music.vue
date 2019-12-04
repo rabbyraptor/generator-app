@@ -106,7 +106,25 @@ export default {
           imageUrl: "faustix",
           info:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi."
-        }
+        },
+        {
+          title: "Noah Carter",
+          time: "23:15",
+          venue: "Main Stage",
+          favorite: false,
+          imageUrl: "noah_carter",
+          info:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi."
+        },
+        {
+          title: "Martin Jensen",
+          time: "00:00",
+          venue: "Main Stage",
+          favorite: false,
+          imageUrl: "martin_jensen",
+          info:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi."
+        }  
       ]
     };
   },
