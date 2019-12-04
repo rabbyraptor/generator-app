@@ -9,7 +9,11 @@
         <div class="expandable-content">
           <v-ons-list-item v-for="artist in artists" :key="artist.title">
             <div class="artist-grid">
-              <div class="artist-image" :style="backgroundImage(artist.imageUrl)" @click="showModal(artist)"></div>
+              <div
+                class="artist-image"
+                :style="backgroundImage(artist.imageUrl)"
+                @click="showModal(artist)"
+              ></div>
               <div class="artist-content" @click="showModal(artist)">
                 <p style="font-weight:bold;" v-html="artist.title" />
                 <p v-html="artist.time" />
@@ -38,7 +42,7 @@
     <transition name="fade">
       <v-ons-card class="modal" v-if="modalVisible">
         <div class="close-btn" @click="modalVisible = false">
-          <ios-arrow-down-icon></ios-arrow-down-icon>
+          <ios-close-circle-icon></ios-close-circle-icon>
         </div>
         <div class="artist-info">
           <div class="artist-info-image" :style="backgroundImage(activeArtist.imageUrl)"></div>
@@ -59,9 +63,25 @@
               <p>{{ activeArtist.info }}</p>
             </div>
             <div class="artist-info-some">
-                <ios-logo-facebook-icon />
+              <div class="circle">
+                <v-ons-icon icon="facebook" />
+              </div>
+              <div class="circle">
+                <v-ons-icon icon="instagram" />
+              </div>
+              <div class="circle">
+                <v-ons-icon icon="twitter" />
+              </div>
+              <div class="circle">
+                <v-ons-icon icon="youtube" />
+              </div>
             </div>
-            <img class="logo" width="100%" style="margin-top:32px; opacity:0.3;" src="../assets/img/city_of_odense_albani.png">
+            <img
+              class="logo"
+              width="100%"
+              style="margin-top:32px; opacity:0.3;"
+              src="../assets/img/city_of_odense_albani.png"
+            />
           </div>
         </div>
       </v-ons-card>
@@ -96,15 +116,15 @@ export default {
   background-color: #ffffff;
   position: fixed;
   height: 100%;
-  width:100%;
+  width: 100%;
   width: auto;
   top: 44px;
   margin: 0;
   max-height: calc(100% - 88px);
   overflow-y: auto;
-  overflow-x:hidden;
+  overflow-x: hidden;
   padding: 0;
-  border-radius:0;
+  border-radius: 0;
 }
 
 .artist-info {
@@ -137,19 +157,40 @@ export default {
   width: 100%;
   grid-template-columns: 1fr 20px;
   align-items: center;
-  margin-bottom:16px;
-  font-size:22px;
+  margin-bottom: 16px;
+  font-size: 22px;
 }
 
-.artist-info-title{
-  font-size:32px!important;
-  margin:.2em 0!important;
+.artist-info-title {
+  font-size: 32px !important;
+  margin: 0.2em 0 !important;
 }
 
 .artist-info-text {
   word-break: break-word;
-  white-space:normal;
+  white-space: normal;
+}
 
+.artist-info-some {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.artist-info-some .circle {
+  font-size: 28px;
+  text-align: center;
+  width: 42px;
+  color: #ffffff;
+  display: inline-block;
+  background-color: #000000;
+  border-radius: 50px;
+  padding: 4px;
+  margin-right: 12px;
+}
+
+.artist-info-some .circle:last-of-type {
+  margin-right: 0;
 }
 
 .close-btn {
@@ -161,7 +202,7 @@ export default {
   width: 100%;
   background-color: #fff;
   padding: 8px 12px 6px 12px;
-  font-size: 20px;
+  font-size: 24px;
   z-index: 5;
   border-bottom: 1px solid #b2b2b2;
 }
