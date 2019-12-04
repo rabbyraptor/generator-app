@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <h1 class="title">Tickets</h1>
     <v-ons-list>
       <v-ons-list-item expandable :expanded.sync="studentTickets.isExpanded">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <h1 class="title">Info</h1>
     <v-ons-list>
       <v-ons-list-item
