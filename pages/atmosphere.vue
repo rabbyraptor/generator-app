@@ -40,13 +40,13 @@ export default {
 
 .imgCol {
   display: block;
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: auto;
 }
 
 .img {
-  height: 350px;
-  width: 350px;
+  height: 335px;
+  width: 335px;
 }
 
 
