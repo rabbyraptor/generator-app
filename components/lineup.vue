@@ -31,10 +31,7 @@
                 <br />
                 {{ activeArtist.venue }}
               </p>
-              <div class="fav-heart" @click="activeArtist.favorite = !activeArtist.favorite">
-                <ios-heart-icon v-if="activeArtist.favorite" />
-                <ios-heart-empty-icon v-else />
-              </div>
+              <fav-heart-button class="fav-heart" :activeartist="activeArtist"/>
             </div>
             <div class="artist-info-text">
               <p>{{ activeArtist.info }}</p>
@@ -84,7 +81,7 @@ export default {
       this.activeArtist = artist;
     }
   },
-  props: ["artists"]
+  props: ["artists"],
 };
 </script>
 

@@ -34,7 +34,11 @@
               </v-ons-list-item>
             </nuxt-link>
           </v-ons-list>
-          <img class="odense-albani-logo" style="margin-top:0;" src="/img/city_of_odense_albani.png" />
+          <img
+            class="odense-albani-logo"
+            style="margin-top:0;"
+            src="/img/city_of_odense_albani.png"
+          />
         </v-ons-splitter-side>
 
         <!-- RIGHT SIDE MENU -->
@@ -67,15 +71,12 @@
               <ios-menu-icon style="font-size:40px; margin-left:7px; margin-top:1px;"></ios-menu-icon>
             </div>
             <div class="center">
-              <img
-                src="/img/lyn_logo.png"
-                width="auto"
-                height="44px"
-                style="padding:4px 0;"
-              />
+              <img src="/img/lyn_logo.png" width="auto" height="44px" style="padding:4px 0;" />
             </div>
             <div class="right" @click="openRightSide = !openRightSide">
-              <ios-contact-icon style="font-size:37px; float:right; margin-right:9px; margin-top:3px;"></ios-contact-icon>
+              <ios-contact-icon
+                style="font-size:37px; float:right; margin-right:9px; margin-top:3px;"
+              ></ios-contact-icon>
             </div>
           </v-ons-toolbar>
           <v-ons-page class="main-wrapper">
@@ -142,12 +143,14 @@ export default {
       }
     };
   },
+  methods: {
+    
+  }
 };
 </script>
 
 
 <style>
-
 /* RIGHT SIDE MENU */
 .right-side-menu-top-grid {
   display: grid;

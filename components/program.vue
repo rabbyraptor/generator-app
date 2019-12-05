@@ -19,10 +19,7 @@
                 <p v-html="artist.time" />
                 <p v-html="artist.venue" />
               </div>
-              <div class="fav-heart" @click="artist.favorite = !artist.favorite">
-                <ios-heart-icon v-if="artist.favorite" />
-                <ios-heart-empty-icon v-else />
-              </div>
+              <fav-heart-button class="fav-heart" :activeartist="artist"/>
             </div>
           </v-ons-list-item>
         </div>
@@ -54,10 +51,7 @@
                 <br />
                 {{ activeArtist.venue }}
               </p>
-              <div class="fav-heart" @click="activeArtist.favorite = !activeArtist.favorite">
-                <ios-heart-icon v-if="activeArtist.favorite" />
-                <ios-heart-empty-icon v-else />
-              </div>
+              <fav-heart-button class="fav-heart" :activeartist="activeArtist"/>
             </div>
             <div class="artist-info-text">
               <p>{{ activeArtist.info }}</p>
@@ -150,7 +144,7 @@ export default {
 .artist-info-top {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 20px;
+  grid-template-columns: 1fr 30px;
   align-items: center;
   margin-bottom: 16px;
   font-size: 22px;
@@ -224,7 +218,7 @@ export default {
 .artist-grid {
   display: grid;
   width: 100%;
-  grid-template-columns: 100px minmax(100px, 1fr) 30px;
+  grid-template-columns: 100px minmax(100px, 1fr) 40px;
   align-items: center;
 }
 
@@ -236,10 +230,6 @@ export default {
 
 .artist-content {
   padding: 0 12px;
-  font-size: 20px;
-}
-
-.fav-heart {
   font-size: 20px;
 }
 

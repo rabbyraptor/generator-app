@@ -29,7 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/ionicons.js', mode: 'client' }
+    { src: '@/plugins/ionicons.js', mode: 'client' },
+    { src: '@/plugins/global.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

@@ -34,11 +34,7 @@
                 Written by {{ activeNews.writer }}
               </p>
               <div class="fav-share-icons">
-                <ios-heart-icon
-                  v-show="activeNews.favorite == true"
-                  @click.native="activeNews.favorite = !activeNews.favorite"
-                />
-                <ios-heart-empty-icon v-show="activeNews.favorite == false" @click.native="activeNews.favorite = !activeNews.favorite" />
+                <fav-heart-button class="fav-heart" :activeartist="activeNews"/>
                 <v-ons-icon icon="md-share" @click.native="shareButton(activeNews)"></v-ons-icon>
               </div>
             </div>
@@ -85,7 +81,7 @@ export default {
       this.activeNews = news;
     },
     backgroundImage(image) {
-      return "background-image: url(/img/artists/" + image + ".png)";
+      return "background-image: url(/img/artists/" + image + ".jpg)";
     },
     shareButton(news) {
       if (navigator.share) {
