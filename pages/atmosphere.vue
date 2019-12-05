@@ -6,16 +6,16 @@
 
 <div class="imgCol">    
 <v-ons-row>
-  <v-ons-col><img class="img" src="/img/lyn_logo.png" alt="#"></v-ons-col>
+  <v-ons-col><img class="img" src="/img/bf_optimized.jpg" alt="#"></v-ons-col>
 </v-ons-row>
 
 
 <v-ons-row>
-  <v-ons-col><img class="img" src="/img/63079_i_optimized.jpg" alt="#"></v-ons-col>
+  <v-ons-col><img class="img" src="/img/no_12q_optimized.jpg" alt="#"></v-ons-col>
 </v-ons-row>
 
 <v-ons-row>
-  <v-ons-col><img class="img" src="/img/lyn_logo.png" alt="#"></v-ons-col>
+  <v-ons-col><img class="img" src="/img/no_26_optimized.jpg" alt="#"></v-ons-col>
 </v-ons-row>
 </div>
 
