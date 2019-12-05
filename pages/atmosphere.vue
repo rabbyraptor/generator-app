@@ -1,37 +1,36 @@
 <template>
-  <div>
+  <div class="page-container">
     <div class="atmosphere">
-    <h1>Atmosphere</h1>
+      <h1>Atmosphere</h1>
     </div>
 
-<div class="imgCol">    
-<v-ons-row>
-  <v-ons-col><img class="img" src="/img/bf_optimized.jpg" alt="#"></v-ons-col>
-</v-ons-row>
+    <div class="imgCol">
+      <v-ons-row>
+        <v-ons-col>
+          <img class="img" src="/img/bf_optimized.jpg" alt="#" />
+        </v-ons-col>
+      </v-ons-row>
 
+      <v-ons-row>
+        <v-ons-col>
+          <img class="img" src="/img/no_12q_optimized.jpg" alt="#" />
+        </v-ons-col>
+      </v-ons-row>
 
-<v-ons-row>
-  <v-ons-col><img class="img" src="/img/no_12q_optimized.jpg" alt="#"></v-ons-col>
-</v-ons-row>
-
-<v-ons-row>
-  <v-ons-col><img class="img" src="/img/no_26_optimized.jpg" alt="#"></v-ons-col>
-</v-ons-row>
-</div>
-
-
-  
+      <v-ons-row>
+        <v-ons-col>
+          <img class="img" src="/img/no_26_optimized.jpg" alt="#" />
+        </v-ons-col>
+      </v-ons-row>
+    </div>
   </div>
 </template>
 
 <script>
-
-export default {
-};
+export default {};
 </script>
 
 <style>
-
 .atmosphere {
   padding: 10px;
   margin: auto;
@@ -41,14 +40,11 @@ export default {
 .imgCol {
   display: block;
   margin-left: 10px;
-  margin-right: auto;
+  margin-right: 10px;
 }
 
 .img {
-  height: 335px;
-  width: 335px;
+  height: auto;
+  width: 100%;
 }
-
-
-
 </style>
