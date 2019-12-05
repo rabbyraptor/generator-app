@@ -1,6 +1,26 @@
 <template>
   <div>
-    <p>{{ this.$route.path }}</p>
+    <div class="atmosphere">
+    <h1>Atmosphere</h1>
+    </div>
+
+<div class="imgCol">    
+<v-ons-row>
+  <v-ons-col><img class="img" src="/img/lyn_logo.png" alt="#"></v-ons-col>
+</v-ons-row>
+
+
+<v-ons-row>
+  <v-ons-col><img class="img" src="/img/63079_i_optimized.jpg" alt="#"></v-ons-col>
+</v-ons-row>
+
+<v-ons-row>
+  <v-ons-col><img class="img" src="/img/lyn_logo.png" alt="#"></v-ons-col>
+</v-ons-row>
+</div>
+
+
+  
   </div>
 </template>
 
@@ -11,5 +31,24 @@ export default {
 </script>
 
 <style>
+
+.atmosphere {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.imgCol {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img {
+  height: 350px;
+  width: 350px;
+}
+
+
 
 </style>
