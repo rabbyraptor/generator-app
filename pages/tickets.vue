@@ -7,6 +7,10 @@
           <h3 style="font-size:24px;">Student Tickets</h3>
         </div>
         <div class="expandable-content tickets">
+          <p style class="ticket-age-warning">
+            <span style>Important!</span>
+            <br />You must be at least 18 years to attend Generator.
+          </p>
           <v-ons-list-item v-for="ticket in studentTickets.tickets" :key="ticket.type">
             <div class="ticket-grid">
               <div class="ticket-image" :style="backgroundImage(studentTickets.imageUrl)"></div>
@@ -24,6 +28,10 @@
           <h3 style="font-size:24px;">Non-Student Tickets</h3>
         </div>
         <div class="expandable-content">
+          <p style class="ticket-age-warning">
+            <span style>Important!</span>
+            <br />You must be at least 18 years to attend Generator.
+          </p>
           <v-ons-list-item v-for="ticket in nonStudentTickets.tickets" :key="ticket.type">
             <div class="ticket-grid">
               <div class="ticket-image" :style="backgroundImage(nonStudentTickets.imageUrl)"></div>
@@ -47,62 +55,62 @@ export default {
     return {
       studentTickets: {
         tickets: [
-        {
-          type: "Ticket 1",
-          price: "DKK 150,-",
-          access: "Standard"
-        },
-        {
-          type: "Ticket 2",
-          price: "DKK 175,-",
-          access: "Standard"
-        },
-        {
-          type: "Ticket 3",
-          price: "DKK 250,-",
-          access: "VIP"
-        },
-        {
-          type: "Ticket 4",
-          price: "DKK 300,-",
-          access: "VIP"
-        }
-      ],
+          {
+            type: "Ticket 1",
+            price: "DKK 150,-",
+            access: "Standard"
+          },
+          {
+            type: "Ticket 2",
+            price: "DKK 175,-",
+            access: "Standard"
+          },
+          {
+            type: "Ticket 3",
+            price: "DKK 250,-",
+            access: "VIP"
+          },
+          {
+            type: "Ticket 4",
+            price: "DKK 300,-",
+            access: "VIP"
+          }
+        ],
         isExpanded: false,
         imageUrl: "ticket-spring"
       },
       nonStudentTickets: {
         tickets: [
-        {
-          type: "Ticket 1",
-          price: "DKK 150,-",
-          access: "Standard"
-        },
-        {
-          type: "Ticket 2",
-          price: "DKK 175,-",
-          access: "Standard"
-        },
-        {
-          type: "Ticket 3",
-          price: "DKK 250,-",
-          access: "VIP"
-        },
-        {
-          type: "Ticket 4",
-          price: "DKK 300,-",
-          access: "VIP"
-        }
-      ],
+          {
+            type: "Ticket 1",
+            price: "DKK 150,-",
+            access: "Standard"
+          },
+          {
+            type: "Ticket 2",
+            price: "DKK 175,-",
+            access: "Standard"
+          },
+          {
+            type: "Ticket 3",
+            price: "DKK 250,-",
+            access: "VIP"
+          },
+          {
+            type: "Ticket 4",
+            price: "DKK 300,-",
+            access: "VIP"
+          }
+        ],
         isExpanded: false,
         imageUrl: "ticket-spring"
       }
     };
   },
-  methods:{
+  methods: {
     backgroundImage(image) {
       return "background-image: url(/img/tickets/" + image + ".jpg)";
-    },
+    }
   }
 };
 </script>
@@ -124,6 +132,17 @@ export default {
 .ticket-content {
   padding: 0 12px;
   font-size: 20px;
+}
+
+.ticket-age-warning {
+  padding: 12px;
+  margin: 0 12px 12px 12px;
+  border: 1px solid #f5201b;
+}
+
+.ticket-age-warning span {
+  color: #f5201b;
+  text-transform: uppercase;
 }
 
 .list-item,
