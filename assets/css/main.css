@@ -68,6 +68,23 @@ a.nuxt-link {
   text-align: center;
 }
 
+/* ION ICONS */
+.fav-heart{
+  font-size: 30px;
+  height:30px;
+  width:30px;
+}
+
+
+/* Odense + Albani Logo */
+.odense-albani-logo{
+  width: 100%;
+  margin-top:32px; 
+  opacity:.3;
+}
+
+
+
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -97,9 +114,3 @@ a.nuxt-link {
   background-color: #35495e;
 }
 
-/* Odense + Albani Logo */
-.odense-albani-logo{
-  width: 100%;
-  margin-top:32px; 
-  opacity:.3;
-}
