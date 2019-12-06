@@ -58,13 +58,48 @@
             <p class="fb-btn" v-else @click="toggleFacebookLogin()">
               <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Connect to Facebook
             </p>
-            <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
+            <v-ons-icon @click="showModal()" class="settings-btn" icon="sliders-h"></v-ons-icon>
           </div>
           <h4 style="margin:12px 0 12px 12px;">Messages</h4>
           <v-ons-card v-for="(message, index) in messages" tappable :key="message.index">
             <b>{{ message.title }}</b>
             <p>{{ message.content }}</p>
           </v-ons-card>
+          <!-- SETTINGS MODAL -->
+          <transition name="rtl-slide">
+            <v-ons-card class="modal" v-if="modalVisible">
+              <div class="settings-info">
+                <v-ons-list>
+                  <v-ons-list-header>Languages</v-ons-list-header>
+                  <v-ons-list-item>English</v-ons-list-item>
+                </v-ons-list>
+                <v-ons-list>
+                  <v-ons-list-header>Favorites</v-ons-list-header>
+                  <v-ons-list-item>No reminders are active</v-ons-list-item>
+                </v-ons-list>
+                <v-ons-list>
+                  <v-ons-list-header>Notifications</v-ons-list-header>
+                  <v-ons-list-item>Notifications are currently disabled</v-ons-list-item>
+                </v-ons-list>
+                <v-ons-list>
+                  <v-ons-list-header>Privacy</v-ons-list-header>
+                  <v-ons-list-item>
+                    <div id="use-of-data">
+                      <div>Allow use of data</div>
+                      <div>
+                        <label class="switch">
+                          <input type="checkbox" class="switch__input" checked />
+                          <div class="switch__toggle">
+                            <div class="switch__handle"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </v-ons-list-item>
+                </v-ons-list>
+              </div>
+            </v-ons-card>
+          </transition>
         </v-ons-splitter-side>
 
         <!-- PAGE CONTENT -->
@@ -99,6 +134,7 @@ export default {
       loggedIn: false,
       openSide: false,
       openRightSide: false,
+      modalVisible: false,
       pages: {
         home: {
           title: "Home",
@@ -158,21 +194,24 @@ export default {
     }
   },
   methods: {
+    showModal() {
+      this.modalVisible = !this.modalVisible;
+    },
     toggleFacebookLogin() {
       if (this.loggedIn == true) {
         Cookies.set("loggedIn", "false");
         this.loggedIn = false;
-        this.$ons.notification.toast(
-          "You have been logged out.",
-          { timeout: 1000, animation: "fall" }
-        );
+        this.$ons.notification.toast("You have been logged out.", {
+          timeout: 1000,
+          animation: "fall"
+        });
       } else {
         Cookies.set("loggedIn", "true");
         this.loggedIn = true;
-        this.$ons.notification.toast(
-          "Login successful.",
-          { timeout: 1000, animation: "fall" }
-        );
+        this.$ons.notification.toast("Login successful.", {
+          timeout: 1000,
+          animation: "fall"
+        });
       }
     }
   }
@@ -202,5 +241,63 @@ export default {
 
 .right-side-menu-top-grid .settings-btn {
   justify-self: flex-end;
+}
+
+/* SETTINGS MODAL */
+
+.settings-info {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-flow: column;
+  width: 100%;
+  position: relative;
+}
+
+.settings-info-wrapper {
+  padding: 0 12px 12px 12px;
+  width: 100%;
+}
+
+.settings-info-title {
+  font-size: 24px !important;
+  margin: 0.2em 0 !important;
+}
+
+.settings-info-text {
+  word-break: break-word;
+  white-space: normal;
+}
+
+#use-of-data {
+  display: grid;
+  width:100%;
+  grid-template-columns: 1fr 52px;
+  align-items:center;
+  padding-right:12px;
+}
+
+.settings-info .list-item,
+.settings-info .list-item__center {
+  padding: 0 0 0 12px;
+}
+
+.settings-info .list-item div,
+.settings-info .list-item__center,
+.settings-info .list-header {
+  font-family: -apple-system, "Helvetica Neue", "Helvetica", "Arial",
+    "Lucida Grande", sans-serif;
+  font-size: 12px;
+}
+
+/* MODAL ANIMATION */
+.rtl-slide-enter-active,
+.rtl-slide-leave-active {
+  transition: all 0.4s ease-out;
+}
+.rtl-slide-enter, .rtl-slide-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0.8;
+  transform: translateX(100%);
 }
 </style>
