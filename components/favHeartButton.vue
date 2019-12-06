@@ -32,6 +32,7 @@ export default {
     addArtistFavorite() {
       this.activeartist.favorite = !this.activeartist.favorite;
       if (this.activeartist.favorite == true) {
+        this.$emit('emit-add-favorite', this.activeartist)
         this.$ons.notification.toast(
           "+ " + this.activeartist.title + " was added to your favorites!",
           { timeout: 1000, animation: "fall" }
