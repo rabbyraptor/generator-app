@@ -66,7 +66,7 @@ export default {
           title: "Vkation",
           time: "18:30",
           venue: "Main Stage",
-          favorite: true,
+          favorite: false,
           imageUrl: "vkation",
           info:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi."
@@ -132,11 +132,6 @@ export default {
     program,
     lineup,
     playlists
-  },
-  computed: {
-    brandColors() {
-      return this.$store.getters["brandColors/getColors"];
-    }
   }
 };
 </script>

@@ -52,7 +52,10 @@
           :open.sync="openRightSide"
         >
           <div class="right-side-menu-top-grid">
-            <p class="fb-btn">
+            <p class="fb-btn" v-if="loggedIn" @click="toggleFacebookLogin()">
+              <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Logout from Facebook
+            </p>
+            <p class="fb-btn" v-else @click="toggleFacebookLogin()">
               <v-ons-icon icon="facebook" style="margin-right:6px;"></v-ons-icon>Connect to Facebook
             </p>
             <v-ons-icon class="settings-btn" icon="sliders-h"></v-ons-icon>
@@ -89,9 +92,11 @@
 </template>
 
 <script>
+import Cookies from "js-cookie";
 export default {
   data() {
     return {
+      loggedIn: false,
       openSide: false,
       openRightSide: false,
       pages: {
@@ -143,8 +148,33 @@ export default {
       }
     };
   },
+  watch: {
+    isLoggedIn() {
+      if (this.checkLogin == true) {
+        this.loggedIn = true;
+      } else {
+        this.loggedIn = false;
+      }
+    }
+  },
   methods: {
-    
+    toggleFacebookLogin() {
+      if (this.loggedIn == true) {
+        Cookies.set("loggedIn", "false");
+        this.loggedIn = false;
+        this.$ons.notification.toast(
+          "You have been logged out.",
+          { timeout: 1000, animation: "fall" }
+        );
+      } else {
+        Cookies.set("loggedIn", "true");
+        this.loggedIn = true;
+        this.$ons.notification.toast(
+          "Login successful.",
+          { timeout: 1000, animation: "fall" }
+        );
+      }
+    }
   }
 };
 </script>
