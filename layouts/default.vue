@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <v-ons-splitter>
+      <v-ons-splitter class="white">
         <!-- LEFT SIDE MENU -->
         <v-ons-splitter-side
           swipeable
@@ -34,11 +34,7 @@
               </v-ons-list-item>
             </nuxt-link>
           </v-ons-list>
-          <img
-            class="odense-albani-logo"
-            style="margin-top:0;"
-            src="/img/city_of_odense_albani.png"
-          />
+          <hoved-sponsor/>
         </v-ons-splitter-side>
 
         <!-- RIGHT SIDE MENU -->
