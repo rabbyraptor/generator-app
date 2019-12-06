@@ -15,6 +15,7 @@
     "nuxt": "^2.10.0",
     "nuxt-imagemin": "^1.0.0",
     "nuxt-onsenui-module": "^1.0.1",
+    "vue-instagram": "^2.0.1",
     "vue-ionicons": "^3.0.4"
   },
   "devDependencies": {

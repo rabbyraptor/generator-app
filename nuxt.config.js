@@ -30,7 +30,8 @@ export default {
   */
   plugins: [
     { src: '@/plugins/ionicons.js', mode: 'client' },
-    { src: '@/plugins/global.js', mode: 'client' }
+    { src: '@/plugins/global.js', mode: 'client' },
+    { src: '@/plugins/vueInstagram.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
