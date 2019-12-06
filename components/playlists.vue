@@ -4,13 +4,13 @@
     <div class="playlists">
       <div class="playlist-grid">
         <a
-          v-for="artist in artists"
-          :key="artist.key"
-          href="https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+          v-for="playlist in playlists"
+          :key="playlist.key"
+          :href="playlist.spotifyLink"
           target="_blank"
           class="playlist-link"
         >
-          <div class="playlist" :style="backgroundImage(artist.imageUrl)">
+          <div class="playlist" :style="backgroundImage(playlist.image)">
             <div class="playlist-icon">
               <v-ons-icon icon="spotify" />
             </div>
@@ -27,12 +27,45 @@ export default {
     return {
       isExpanded: true,
       modalVisible: false,
-      activeArtist: null
+      activeArtist: null,
+      playlists: [
+        {
+          title: "Top artists 2020",
+          image: "topartists2020",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        {
+          title: "Upcoming artists 2020",
+          image: "upcomingartist",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        {
+          title: "Main Stage 2020",
+          image: "mainstage",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        {
+          title: "Black Forest",
+          image: "blackforeststage",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        {
+          title: "Urban Stage",
+          image: "urbanstage",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        {
+          title: "Best of 2019",
+          image: "bestof2019",
+          spotifyLink: "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"
+        },
+        
+      ]
     };
   },
   methods: {
     backgroundImage(image) {
-      return "background-image: url(/img/artists/" + image + ".jpg)";
+      return "background-image: url(/img/playlists/" + image + ".jpg)";
     }
   },
   props: ["artists"]
