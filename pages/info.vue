@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="page-container" :style="pageBackground(this.$route.name)">
     <h1 class="title">Info</h1>
     <v-ons-list>
       <v-ons-list-item
@@ -9,7 +9,7 @@
         :expanded.sync="tab.isExpanded"
       >
         <div class="center" style="padding:12px;">
-          <h2>{{ tab.label }}</h2>
+          <h3>{{ tab.label }}</h3>
         </div>
         <div class="expandable-content">
           <div class="info-tab-content">
@@ -19,7 +19,7 @@
         </div>
       </v-ons-list-item>
     </v-ons-list>
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+    <hoved-sponsor />
   </div>
 </template>
 
@@ -88,7 +88,7 @@ export default {
         },
         {
           label: "Sponsors",
-          title: "About Generator Festival",
+          title: "Sponsors of Generator",
           imageUrl: "busy_doing_nothing",
           content:
             "<img class='odense-albani-logo' src='/img/sponsor-logos-double.png' />",

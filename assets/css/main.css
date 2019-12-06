@@ -35,9 +35,25 @@ h5,
   text-transform: uppercase;
 }
 
+.white h1, .white h2{
+  color:#ffffff!important;
+}
+
+.page__content{
+  padding-bottom:44px;
+}
+
 /* PAGE CONTAINER */
 .page-container{
-  margin-bottom:44px;
+  width:100%;
+  padding-bottom:44px;
+  top:0;
+  min-height:100%;
+  position: absolute;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .tabbar__label {
@@ -73,14 +89,6 @@ a.nuxt-link {
   font-size: 30px;
   height:30px;
   width:30px;
-}
-
-
-/* Odense + Albani Logo */
-.odense-albani-logo{
-  width: 100%;
-  margin-top:32px; 
-  opacity:.3;
 }
 
 .alert-dialog-content{

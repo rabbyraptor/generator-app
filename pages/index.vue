@@ -1,21 +1,17 @@
 <template>
-  <div class="index-container">
+  <div class="page-container" :style="pageBackground(this.$route.name)">
     <div class="indexbox">
-      <img class="indexlogo" src="/img/generator_logo_uden_dato.png" />
-      <h2 id="h2index">
-        Festival
-        <br />2020
-      </h2>
+      <img class="indexlogo" src="/img/generator_logo_2020_white.png" />
     </div>
 
     <div class="buyticket">
-      <a id="a" href="#">
-        <h3 id="h3index">Buy Ticket</h3>
-      </a>
+      <nuxt-link to="./tickets" id="a">
+        <h3 id="h3index">Buy tickets now!</h3>
+      </nuxt-link>
     </div>
 
     <div class="spons">
-      <img class="logo" src="/img/city_of_odense_albani.png" />
+      <hoved-sponsor style="position: absolute; bottom:0;" />
     </div>
   </div>
 </template>
@@ -25,33 +21,20 @@ export default {};
 </script>
 
 <style>
-.index-container {
-  background-image: url(/img/bg/bg1.jpg);
-  background-size: cover;
-  background-position: center;
-  padding: 70px 0;
-}
-
-.indexbox {
-  width: 250px;
-  height: 180px;
-  padding: 10px;
-  margin: auto;
-  background-color: white;
-  text-align: center;
-}
-
 .indexlogo {
   width: 100%;
+  margin-top: 70px;
+  text-align: center;
 }
 
 .buyticket {
-  width: 250px;
-  height: 70px;
-  padding: 10px;
-  margin: 30px auto;
+  max-width: 250px;
+  padding: 12px;
+  margin: auto;
+  margin-top: 50px;
   background-color: red;
   text-align: center;
+  border-radius: 50px;
 }
 
 .buyticket:active {
@@ -60,26 +43,14 @@ export default {};
   transform: translateY(4px);
 }
 
-.spons {
-  width: 200px;
-  height: 50px;
-  margin: 90px auto;
-  text-align: center;
-}
-
 #a {
   text-decoration: none;
   color: white;
 }
 
-.logo {
-  width: 90%;
-  opacity: 0.8;
-}
-
 #h2index,
 #h3index {
-  font-size: 40px;
+  font-size: 32px;
   margin: 0;
 }
 </style>

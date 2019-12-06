@@ -1,10 +1,10 @@
 <template>
-  <div class="page-container">
+  <div class="page-container" :style="pageBackground(this.activeTab)">
     <h1 class="title">Music</h1>
     <program :artists="this.artists" v-if="activeTab == 'program'"></program>
     <lineup :artists="this.artists" v-if="activeTab == 'lineup'"></lineup>
     <playlists :artists="this.artists" v-if="activeTab == 'playlists'"></playlists>
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+    <hoved-sponsor />
     <v-ons-bottom-toolbar class="music-toolbar">
       <ul>
         <li
@@ -33,7 +33,7 @@ export default {
         return "color: " + this.brandColors.red.hex;
       }
       return null;
-    }
+    },
   },
   data() {
     return {

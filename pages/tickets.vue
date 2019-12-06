@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="page-container" :style="pageBackground(this.$route.name)">
     <h1 class="title">Tickets</h1>
     <v-ons-list>
       <v-ons-list-item expandable :expanded.sync="studentTickets.isExpanded">
@@ -45,7 +45,7 @@
         </div>
       </v-ons-list-item>
     </v-ons-list>
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+    <hoved-sponsor />
   </div>
 </template>
 

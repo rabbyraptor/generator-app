@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="page-container" :style="pageBackground(this.$route.name)">
     <h1 class="title">Atmosphere</h1>
     <div class="instagram-section" v-if="activeTab == 'images'">
       <vue-instagram :token="igToken" :count="imagesToGet" mediaType="images" class="ig-grid">
@@ -10,7 +10,7 @@
         </template>
       </vue-instagram>
     </div>
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+    <hoved-sponsor />
     <v-ons-bottom-toolbar class="atmosphere-toolbar">
       <ul>
         <li

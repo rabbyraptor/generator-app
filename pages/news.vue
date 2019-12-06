@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="page-container" :style="pageBackground(this.$route.name)">
     <h1 class="title">News</h1>
     <v-ons-list>
       <v-ons-list-item v-for="news in news" :key="news.title">
@@ -50,7 +50,7 @@
       </v-ons-card>
     </transition>
 
-    <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+    <hoved-sponsor />
     <v-ons-bottom-toolbar class="news-toolbar">
       <ul>
         <li
@@ -179,11 +179,6 @@ export default {
       ]
     };
   },
-  computed: {
-    brandColors() {
-      return this.$store.getters["brandColors/getColors"];
-    }
-  }
 };
 </script>
 
