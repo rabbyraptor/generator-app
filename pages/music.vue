@@ -1,8 +1,8 @@
 <template>
   <div class="page-container" :style="pageBackground(this.activeTab)">
     <h1 class="title">Music</h1>
-    <program :artists="this.artists" v-if="activeTab == 'program'"></program>
     <lineup :artists="this.artists" v-if="activeTab == 'lineup'"></lineup>
+    <program :artists="this.artists" v-if="activeTab == 'program'"></program>
     <playlists :artists="this.artists" v-if="activeTab == 'playlists'"></playlists>
     <hoved-sponsor />
     <v-ons-bottom-toolbar class="music-toolbar">
