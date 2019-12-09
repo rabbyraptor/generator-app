@@ -23,18 +23,13 @@
                 />
               </nuxt-link>
             </div>
-            <nuxt-link
-              class="nuxt-link"
-              :to="page.url"
-              v-for="(page, index) in pages"
-              :key="page.index"
-            >
+            <nuxt-link class="nuxt-link" :to="page.url" v-for="page in pages" :key="page.index">
               <v-ons-list-item tappable modifier="chevron" @click="openSide = false">
                 <div class="center" style="margin-left:12px;">{{ page.title }}</div>
               </v-ons-list-item>
             </nuxt-link>
           </v-ons-list>
-          <hoved-sponsor/>
+          <hoved-sponsor />
         </v-ons-splitter-side>
 
         <!-- RIGHT SIDE MENU -->
@@ -268,10 +263,10 @@ export default {
 
 #use-of-data {
   display: grid;
-  width:100%;
+  width: 100%;
   grid-template-columns: 1fr 52px;
-  align-items:center;
-  padding-right:12px;
+  align-items: center;
+  padding-right: 12px;
 }
 
 .settings-info .list-item,
