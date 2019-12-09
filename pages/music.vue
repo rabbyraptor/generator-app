@@ -8,10 +8,8 @@
     <v-ons-bottom-toolbar class="music-toolbar">
       <ul>
         <li
-          v-for="(tab, index) in tabs"
+          v-for="tab in tabs"
           :label="tab.label"
-          :badge="tab.badge"
-          :icon="tab.icon"
           :key="tab.key"
           @click="activeTab = tab.key"
           :style="isActiveTab(tab.key)"
