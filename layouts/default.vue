@@ -16,7 +16,7 @@
             <div style="padding:12px; margin-left:-5px">
               <nuxt-link to="/">
                 <img
-                  src="/img/generator_logo_uden_dato.png"
+                  src="/img/generator_logo_2020.png"
                   width="100%"
                   height="auto"
                   @click="openSide = false"
@@ -29,7 +29,7 @@
               </v-ons-list-item>
             </nuxt-link>
           </v-ons-list>
-          <hoved-sponsor />
+          <img class="odense-albani-logo" src="/img/albani_cityodense.png" />
         </v-ons-splitter-side>
 
         <!-- RIGHT SIDE MENU -->
@@ -52,13 +52,13 @@
             <v-ons-icon @click="showModal()" class="settings-btn" icon="sliders-h"></v-ons-icon>
           </div>
           <h4 style="margin:12px 0 12px 12px;">Messages</h4>
-          <v-ons-card v-for="(message, index) in messages" tappable :key="message.index">
+          <v-ons-card v-for="message in messages" tappable :key="message.index">
             <b>{{ message.title }}</b>
             <p>{{ message.content }}</p>
           </v-ons-card>
           <!-- SETTINGS MODAL -->
           <transition name="rtl-slide">
-            <v-ons-card class="modal" v-if="modalVisible">
+            <v-ons-card class="modal" id="settings-modal" v-if="modalVisible">
               <div class="settings-info">
                 <v-ons-list>
                   <v-ons-list-header>Languages</v-ons-list-header>
@@ -227,6 +227,7 @@ export default {
   padding: 4px 6px;
   border-radius: 50px;
   width: 90%;
+  max-width:150px;
   text-align: center;
 }
 
@@ -235,6 +236,11 @@ export default {
 }
 
 /* SETTINGS MODAL */
+#settings-modal{
+  position: absolute;
+  top:44px;
+  padding:0;
+}
 
 .settings-info {
   color: #000000;
