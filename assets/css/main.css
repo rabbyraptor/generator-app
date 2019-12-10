@@ -43,9 +43,14 @@ h5,
   padding-bottom:44px;
 }
 
+.page__background{
+  background-color:#1F1F21!important;
+}
+
 /* PAGE CONTAINER */
 .page-container{
   width:100%;
+  min-height:524px;
   padding-bottom:44px;
   top:0;
   position: absolute;
@@ -53,10 +58,6 @@ h5,
   background-attachment: fixed;
   background-position: top center;
   background-repeat: no-repeat;
-}
-
-.tabbar__label {
-  /*font-size:16px!important;*/
 }
 
 /* LINKS */
