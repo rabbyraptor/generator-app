@@ -51,10 +51,9 @@
               </div>
             </div>
             <img
-              class="logo"
-              width="100%"
-              style="margin-top:32px; opacity:0.3;"
-              src="/img/city_of_odense_albani.png"
+              class="odense-albani-logo"
+              src="/img/albani_cityodense.png"
+              style="margin-top:64px"
             />
           </div>
         </div>
