@@ -33,15 +33,13 @@ export default {
         {
           label: "About",
           title: "About Generator Festival",
-          imageUrl: "busy_doing_nothing",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
+            "GENERATOR is the city’s new festival. And we’re going to start the new semester with a BANG! If you are a new or old student, you are going to enjoy this extraordinary kickass party experience. The festival will show you the streets of Odense like you’ve never seen them before. Good vibes and a party atmosphere will float through the air. Every day, the festival takes over new streets, with new stages and new artists. Come fill the city with life and love and let’s generate the best student party ever!",
           isExpanded: false
         },
         {
           label: "Neighbour",
           title: "Neighbour contact",
-          imageUrl: "busy_doing_nothing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
           isExpanded: false
@@ -49,23 +47,20 @@ export default {
         {
           label: "Volunteer",
           title: "Volunteer at Generator",
-          imageUrl: "busy_doing_nothing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
           isExpanded: false
         },
         {
           label: "FAQ",
-          title: "FAQ",
-          imageUrl: "busy_doing_nothing",
+          title: "Frequently asked questions",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
+            "<ul class='faq'><li class='question'>What is the age requirement for attending Generator?</li><li>You must be at least 18 years of age to attend Generator Festival.</li></ul>",
           isExpanded: false
         },
         {
           label: "Contact",
           title: "Contact",
-          imageUrl: "busy_doing_nothing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
           isExpanded: false
@@ -73,7 +68,6 @@ export default {
         {
           label: "Social",
           title: "Social",
-          imageUrl: "busy_doing_nothing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
           isExpanded: false
@@ -81,17 +75,15 @@ export default {
         {
           label: "Benefits",
           title: "Benefits",
-          imageUrl: "busy_doing_nothing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit. Euismod lacinia at quis risus sed vulputate odio. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Placerat in egestas erat imperdiet sed euismod nisi.",
           isExpanded: false
         },
         {
           label: "Sponsors",
-          title: "Sponsors of Generator",
-          imageUrl: "busy_doing_nothing",
+          title: "Generator 2020 is powered by:",
           content:
-            "<img class='odense-albani-logo' src='/img/sponsor-logos-double.png' />",
+            "<img class='odense-albani-logo' src='/img/sponsor-logos-double-black.png' />",
           isExpanded: false
         }
       ]
@@ -126,5 +118,14 @@ export default {
 
 .list-item__expandable-content {
   padding:0;
+}
+
+.faq{
+  list-style-type: none;
+  padding:0;
+}
+
+.faq .question{
+  text-decoration: underline;
 }
 </style>
