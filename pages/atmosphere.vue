@@ -16,8 +16,6 @@
         <li
           v-for="(tab, index) in tabs"
           :label="tab.label"
-          :badge="tab.badge"
-          :icon="tab.icon"
           :key="tab.key"
           @click="activeTab = tab.key"
           :style="isActiveTab(tab.key)"
@@ -32,7 +30,7 @@ export default {
   data() {
     return {
       igToken: "7544361227.1677ed0.f5432be5691c4271a8e3cf73ef4103c7",
-      imagesToGet: 3,
+      imagesToGet: 9,
       activeTab: "images",
       tabs: [
         {
