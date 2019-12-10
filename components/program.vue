@@ -19,7 +19,7 @@
                 <p v-html="artist.time" />
                 <p v-html="artist.venue" />
               </div>
-              <fav-heart-button class="fav-heart" :activeartist="artist"/>
+              <fav-heart-button class="fav-heart" :activeartist="artist" />
             </div>
           </v-ons-list-item>
         </div>
@@ -51,7 +51,7 @@
                 <br />
                 {{ activeArtist.venue }}
               </p>
-              <fav-heart-button class="fav-heart" :activeartist="activeArtist"/>
+              <fav-heart-button class="fav-heart" :activeartist="activeArtist" />
             </div>
             <div class="artist-info-text">
               <p>{{ activeArtist.info }}</p>
@@ -70,7 +70,11 @@
                 <v-ons-icon icon="youtube" />
               </div>
             </div>
-            <img class="odense-albani-logo" src="/img/albani_cityodense.png" />
+            <img
+              class="odense-albani-logo"
+              src="/img/albani_cityodense.png"
+              style="margin-top:64px"
+            />
           </div>
         </div>
       </v-ons-card>
