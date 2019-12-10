@@ -7,7 +7,7 @@
           <div class="news-image" :style="backgroundImage(news.imageUrl)" @click="showModal(news)"></div>
           <div class="news-content" @click="showModal(news)">
             <p style="font-weight:bold;" v-html="news.title" />
-            <p>{{ news.content.slice(0, 75) }} ...</p>
+            <p>{{ news.content.slice(0, 50) }} ...</p>
           </div>
           <div class="fav-heart" @click="news.favorite = !news.favorite">
             <ios-heart-icon v-if="news.favorite" />
@@ -35,7 +35,7 @@
               </p>
               <div class="fav-share-icons">
                 <fav-heart-button class="fav-heart" :activeartist="activeNews"/>
-                <v-ons-icon icon="md-share" @click.native="shareButton(activeNews)"></v-ons-icon>
+                <v-ons-icon icon="md-share" class="fav-heart" style="display:flex; justify-content:center;" size="30px" @click="shareButton(activeNews)"></v-ons-icon>
               </div>
             </div>
             <div class="news-info-text">
@@ -44,13 +44,13 @@
               <p>Links and sources:</p>
             </div>
             <div class="news-info-some"></div>
-            <img class="odense-albani-logo" src="/img/city_of_odense_albani.png" />
+            <img class="odense-albani-logo" src="/img/albani_cityodense.png" />
           </div>
         </div>
       </v-ons-card>
     </transition>
 
-    <hoved-sponsor />
+    <hoved-sponsor/>
     <v-ons-bottom-toolbar class="news-toolbar">
       <ul>
         <li
@@ -137,7 +137,7 @@ export default {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
           time: "Aug 11 2019",
           writer: "Generator",
-          favorite: true,
+          favorite: false,
           imageUrl: "faustix"
         },
         {
@@ -226,10 +226,10 @@ export default {
 .news-info-top {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 20px;
+  grid-template-columns: 1fr 30px;
   align-items: center;
   margin-bottom: 16px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .news-info-title {
@@ -293,11 +293,14 @@ export default {
   padding: 0;
 }
 
+.list-item__expandable-content {
+  padding: 0;
+}
+
 .news-grid {
   display: grid;
   width: 100%;
-  grid-template-rows: 100%;
-  grid-template-columns: 100px 1fr 30px;
+  grid-template-columns: 100px minmax(100px, 1fr) 40px;
   align-items: center;
 }
 
@@ -305,27 +308,16 @@ export default {
   height: 100px;
   width: 100px;
   background-size: cover;
-  background-position: center;
 }
 
 .news-content {
-  padding: 12px;
-}
-
-.fav-share-icons {
-  display: flex;
-  flex-flow: column;
+  padding: 0 12px;
   font-size: 20px;
 }
 
-/* TABBAR */
-.tabbar {
-  z-index: 4;
-  position: fixed;
-}
-
-.ons-tabbar {
-  z-index: 4 !important;
+.ion {
+  display: flex;
+  align-items: center;
 }
 
 .news-toolbar {
