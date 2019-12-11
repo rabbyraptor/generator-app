@@ -23,6 +23,23 @@ html {
 
 * {
   font-family: "Knockout-49";
+ }
+
+.toolbar, .bottom-bar{
+  background-color: #1F1F21!important;
+  color:white!important;
+  fill:white;
+
+}
+.list .list-item{
+  background-color: #1F1F21;
+  color:white;
+  fill:white;
+}
+
+#settings-modal .list .list-item, #nav-menu a .list-item{
+  background-color: #fff;
+  color:black;
 }
 
 h1,

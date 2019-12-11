@@ -83,7 +83,7 @@ export default {
           label: "Sponsors",
           title: "Generator 2020 is powered by:",
           content:
-            "<img class='odense-albani-logo' src='/img/sponsor-logos-double-black.png' />",
+            "<img class='odense-albani-logo' src='/img/sponsor-logos-double-white.png' />",
           isExpanded: false
         }
       ]

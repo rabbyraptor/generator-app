@@ -12,7 +12,7 @@
           side="left"
           :open.sync="openSide"
         >
-          <v-ons-list style="display:flex; flex-flow:column;">
+          <v-ons-list style="display:flex; flex-flow:column;" id="nav-menu">
             <div style="padding:12px; margin-left:-5px">
               <nuxt-link to="/">
                 <img
@@ -100,7 +100,7 @@
               <ios-menu-icon style="font-size:40px; margin-left:7px; margin-top:1px;"></ios-menu-icon>
             </div>
             <div class="center">
-              <img src="/img/lyn_logo.png" width="auto" height="44px" style="padding:4px 0;" />
+              <img src="/img/lyn_logo_white.png" width="auto" height="44px" style="padding:4px 0;" />
             </div>
             <div class="right" @click="openRightSide = !openRightSide">
               <ios-contact-icon
