@@ -2,7 +2,7 @@
   <div class="page-container" :style="pageBackground(this.$route.name)">
     <h1 class="title">News</h1>
     <v-ons-list>
-      <v-ons-list-item v-for="news in news" :key="news.title">
+      <v-ons-list-item v-for="news in news.slice().reverse()" :key="news.index">
         <div class="news-grid">
           <div class="news-image" :style="backgroundImage(news.imageUrl)" @click="showModal(news)"></div>
           <div class="news-content" @click="showModal(news)">
@@ -81,7 +81,7 @@ export default {
       this.activeNews = news;
     },
     backgroundImage(image) {
-      return "background-image: url(/img/artists/" + image + ".jpg)";
+      return "background-image: url(/img/news/" + image + ".jpg)";
     },
     shareButton(news) {
       if (navigator.share) {
@@ -129,7 +129,7 @@ export default {
           time: "Aug 7 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
+          imageUrl: "news1"
         },
         {
           title: "News title 2",
@@ -138,7 +138,7 @@ export default {
           time: "Aug 11 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
+          imageUrl: "news2"
         },
         {
           title: "News title 3",
@@ -147,7 +147,7 @@ export default {
           time: "Aug 15 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
+          imageUrl: "news3"
         },
         {
           title: "News title 4",
@@ -156,7 +156,7 @@ export default {
           time: "Aug 16 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
+          imageUrl: "news4"
         },
         {
           title: "News title 5",
@@ -165,7 +165,7 @@ export default {
           time: "Aug 26 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
+          imageUrl: "news5"
         },
         {
           title: "News title 6",
@@ -174,8 +174,54 @@ export default {
           time: "Sep 2 2019",
           writer: "Generator",
           favorite: false,
-          imageUrl: "faustix"
-        }
+          imageUrl: "news6"
+        },
+        {
+          title: "News title 6",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
+          time: "Sep 4 2019",
+          writer: "Generator",
+          favorite: false,
+          imageUrl: "news7"
+        },
+        {
+          title: "News title 6",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
+          time: "Sep 7 2019",
+          writer: "Generator",
+          favorite: false,
+          imageUrl: "news8"
+        },
+        {
+          title: "News title 9",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
+          time: "Sep 10 2019",
+          writer: "Generator",
+          favorite: false,
+          imageUrl: "news9"
+        },
+        {
+          title: "News title 10",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
+          time: "Sep 12 2019",
+          writer: "Generator",
+          favorite: false,
+          imageUrl: "news10"
+        },
+        {
+          title: "News title 11",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. In aliquam sem fringilla ut morbi tincidunt. Nunc vel risus commodo viverra maecenas accumsan lacus. Pretium quam vulputate dignissim suspendisse in est ante in nibh.",
+          time: "Sep 13 2019",
+          writer: "Generator",
+          favorite: false,
+          imageUrl: "news11"
+        },
+        
       ]
     };
   },
